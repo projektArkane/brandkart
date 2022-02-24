@@ -1,0 +1,104 @@
+.get-verified {
+  padding: 3rem 4rem 6rem 4rem;
+  position: relative;
+  /* background-color: greenyellow; */
+}
+
+.get-verified .get-verified-box {
+  display: flex;
+  /* background-color: #f4f9ff; */
+  background: rgb(105, 89, 207);
+  background: linear-gradient(
+    63deg,
+    rgba(105, 89, 207, 1) 35%,
+    rgba(73, 144, 247, 1) 100%
+  );
+
+  height: 280px;
+  border-radius: 80px;
+}
+
+.get-verified-box .gvb-left {
+  /* background-color: orange; */
+  flex: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 72px;
+  /* align-items: center; */
+}
+
+.get-verified-box .gvb-left h2 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48.41px;
+  color: white;
+}
+
+.get-verified-box .gvb-left p {
+  /* background-color: blueviolet; */
+  color: white;
+  margin-top: 18px;
+}
+
+.get-verified-box .gvb-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: orange; */
+  flex: 60%;
+}
+
+.get-verified-box .gvb-right .searchbox {
+  display: flex;
+  padding-right: 10px;
+  background-color: white;
+  width: 75%;
+  height: 70px;
+  border-radius: 60px;
+}
+
+.get-verified-box .gvb-right .searchbox div:nth-child(1) {
+  /* background-color: red; */
+  flex: 70%;
+}
+
+.get-verified-box .gvb-right .searchbox div:nth-child(1) input {
+  border: none;
+  padding-left: 3rem;
+  font-size: 18px;
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+  outline: none;
+  height: 70px;
+  width: 100%;
+}
+
+.get-verified-box .gvb-right .searchbox div:nth-child(2) {
+  flex: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blueviolet; */
+}
+
+.get-verified-box .gvb-right .searchbox div:nth-child(2) > button {
+  background-color: var(--color-purple);
+  height: 75%;
+  border-radius: 60px;
+  display: flex;
+  padding: 0 2.3rem;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.get-verified > img {
+  position: absolute;
+  right: 30px;
+  top: -10px;
+  z-index: -10;
+}

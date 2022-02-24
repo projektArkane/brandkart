@@ -1,0 +1,120 @@
+.brands {
+  /* padding: 0 4rem; */
+  padding: 1rem 4rem 6rem 4rem;
+}
+
+.brands .line-1 {
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+}
+
+.brands .line-1 h3 {
+  color: var(--color-purple);
+  font-size: 20px;
+  line-height: 24.2px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.brands .line-2 {
+  /* background-color: green; */
+  margin-top: 21px;
+  display: flex;
+  justify-content: center;
+}
+
+.brands .line-2 p {
+  color: var(--color-subheading);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48.41px;
+}
+
+.brands .line-3 {
+  margin-top: 63px;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  align-items: center;
+}
+
+.brands-desc {
+  /* background-color: blueviolet; */
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.brands-desc > div {
+  display: flex;
+  width: 90%;
+  height: 180px;
+  border-radius: 90px;
+  /* background-color: #edf2f4; */
+  background-color: #f1eff9;
+}
+
+.brands-desc > div > div:nth-child(1) {
+  flex: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.brands-desc > div > div:nth-child(1) > p {
+  color: var(--color-subheading);
+  width: 70%;
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: bold;
+}
+
+.brands-desc > div > div:nth-child(2) {
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: green; */
+}
+
+.brands-desc > div > div:nth-child(2) > h3 {
+  font-size: 26px;
+  line-height: 31px;
+  color: #828282;
+}
+.brands-desc > div > div:nth-child(2) > h3 > span {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--color-subheading);
+  line-height: 31px;
+}
+
+/* .brands-desc > div > div:nth-child(2) > div {
+  display: flex;
+} */
+
+#au-container {
+  margin-top: 25px;
+  /* background-color: chocolate; */
+  display: flex;
+}
+
+#au-container > div:nth-child(2) {
+  position: relative;
+  right: 25px;
+}
+#au-container > div:nth-child(3) {
+  position: relative;
+  right: 50px;
+}
+#au-container > div:nth-child(4) {
+  position: relative;
+  right: 75px;
+}
+#au-container > div:nth-child(5) {
+  position: relative;
+  right: 100px;
+}

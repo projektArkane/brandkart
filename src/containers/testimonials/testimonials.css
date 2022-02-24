@@ -1,0 +1,95 @@
+.testimonials {
+  padding: 3rem 4rem 6rem 4rem;
+  /* background-color: orange; */
+}
+
+.testimonials .line-1 {
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+}
+
+.testimonials .line-1 h3 {
+  color: var(--color-purple);
+  font-size: 20px;
+  line-height: 24.2px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.testimonials .line-2 {
+  /* background-color: green; */
+  margin-top: 21px;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonials .line-2 p {
+  color: var(--color-subheading);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48.41px;
+}
+
+.testimonials .tm-main {
+  position: relative;
+  /* background-color: aquamarine; */
+  margin-top: 79px;
+  display: flex;
+}
+
+.testimonials .tm-main #quote-sign {
+  position: absolute;
+  right: 120px;
+  bottom: 0;
+}
+
+.tm-left {
+  position: relative;
+  flex: 40%;
+  display: flex;
+  justify-content: center;
+  /* background-color: aquamarine; */
+}
+
+.tm-left #dots {
+  position: absolute;
+  right: 100px;
+  z-index: -10;
+}
+
+.tm-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 60%;
+  /* background-color: blueviolet; */
+}
+
+.testimonials .tm-right h3 {
+  color: var(--color-subheading);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+}
+
+.testimonials .tm-right p {
+  margin-top: 15px;
+  color: var(--color-text);
+  width: 65%;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28.8px;
+}
+
+.testimonials .tm-right button {
+  margin-top: 20px;
+  background-color: #e1dffe;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #6e53cb;
+  line-height: 25.6px;
+  padding: 5px 15px;
+  align-self: flex-start;
+}
