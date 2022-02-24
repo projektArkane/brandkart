@@ -4,6 +4,8 @@ import "./navbar.css";
 import { logos } from "../../constants";
 import { BiMenu } from "react-icons/bi";
 
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <nav className="bk-navbar">
@@ -12,10 +14,14 @@ const Navbar = () => {
       </div>
       <div className="leftSide">
         <div className="bk-logo">
-          <img src={logos.brandkart} alt="logo" />
+          <Link to="/">
+            <img src={logos.brandkart} alt="logo" />
+          </Link>
         </div>
         <div className="brand-title">
-          <span>BrandKart</span>
+          <Link to="/">
+            <span>BrandKart</span>
+          </Link>
         </div>
       </div>
 
@@ -28,13 +34,19 @@ const Navbar = () => {
             <a href="#">Our Work</a>
           </li>
           <li>
-            <button type="button">Login</button>
+            <button className="login-btn" type="button">
+              Login
+            </button>
           </li>
         </div>
 
         <div>
           <li>
-            <button type="button">Get Started</button>
+            <Link to="/getstarted">
+              <button className="getstarted-btn-lg" type="button">
+                Get Started
+              </button>
+            </Link>
           </li>
         </div>
       </ul>

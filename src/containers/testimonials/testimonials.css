@@ -1,5 +1,5 @@
 .testimonials {
-  padding: 3rem 4rem 6rem 4rem;
+  padding: 3rem 5.5rem 6rem 5.5rem;
   /* background-color: orange; */
 }
 
@@ -82,7 +82,7 @@
   line-height: 28.8px;
 }
 
-.testimonials .tm-right button {
+.testimonials .rm-btn {
   margin-top: 20px;
   background-color: #e1dffe;
   border-radius: 6px;
@@ -92,4 +92,10 @@
   line-height: 25.6px;
   padding: 5px 15px;
   align-self: flex-start;
+}
+
+.testimonials .rm-btn:hover {
+  background-color: var(--color-purple);
+  color: white;
+  transition: 0.1s ease-in;
 }

@@ -3,6 +3,7 @@ import hero_image from "../assets/images/hero_image.png";
 import services_image1 from "../assets/images/services_image1.png";
 import services_image2 from "../assets/images/services_image2.png";
 import services_image3 from "../assets/images/services_image3.png";
+import emptycard from "../assets/images/emptycard.png";
 
 import influencer1 from "../assets/images/influencer1.png";
 import influencer2 from "../assets/images/influencer2.png";
@@ -30,6 +31,7 @@ export default {
   services_image1,
   services_image2,
   services_image3,
+  emptycard,
   influencer1,
   influencer2,
   influencer3,

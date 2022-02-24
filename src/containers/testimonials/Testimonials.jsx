@@ -28,7 +28,7 @@ const Testimonials = () => {
             Really impressed with the high quality and quick turnaround time.
             Highly recommend.
           </p>
-          <button>Read More</button>
+          <button className="rm-btn">Read More</button>
         </div>
         <img id="quote-sign" width={55} src={images.quote_sign} />
       </div>

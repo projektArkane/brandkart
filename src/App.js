@@ -1,29 +1,21 @@
 import React from "react";
 import "./App.css";
 
-import {
-  Header,
-  Brands,
-  Services,
-  Influencer,
-  Testimonials,
-  GetVerified,
-  Footer,
-} from "./containers";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import { Navbar } from "./components";
+
+import { Home, GetStarted } from "./pages";
 
 const App = () => {
   return (
-    <div>
+    <Router>
       <Navbar />
-      <Header />
-      <Brands />
-      <Services />
-      <Influencer />
-      <Testimonials />
-      <GetVerified />
-      <Footer />
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/getstarted" element={<GetStarted />} />
+      </Routes>
+    </Router>
   );
 };
 

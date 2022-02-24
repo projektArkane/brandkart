@@ -1,5 +1,5 @@
 .services {
-  padding: 3rem 4rem 6rem 4rem;
+  padding: 3rem 5.5rem 6rem 5.5rem;
 }
 
 .services .line-1 {
@@ -57,12 +57,13 @@
   display: flex;
   padding-bottom: 54px;
   /* align-items: flex-start; */
-  padding-top: 48px;
+  padding-top: 45px;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.4);
 }
 
 .service-type .number {
   /* background-color: aqua; */
+  padding-top: 2px;
   color: rgba(0, 0, 0, 0.4);
   font-size: 26px;
   font-weight: 600;
@@ -78,6 +79,9 @@
 }
 
 .service-type .arrow {
+  /* background-color: greenyellow; */
+  display: flex;
+  align-items: center;
   font-size: 26px;
   color: rgba(0, 0, 0, 0.4);
 }
@@ -96,11 +100,15 @@
   flex: 15%;
 }
 
-.service-type div:nth-child(2) p:nth-child(2) {
+.service-type .title p {
   font-size: 16px;
   font-weight: 400;
   color: black;
   line-height: 23px;
+}
+
+.service-type .title h2 {
+  cursor: pointer;
 }
 
 .services-card {

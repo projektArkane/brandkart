@@ -27,10 +27,10 @@ const Influencer = () => {
   return (
     <div className="influencer">
       <div className="line-1">
-        <h3>Influencer</h3>
+        <h3>Influencers</h3>
       </div>
       <div className="line-2">
-        <p>Showcase of our top influencer </p>
+        <p>Showcase of our top influencers </p>
       </div>
       <div className="pills-container">
         {pillTitles.map((item) => (
