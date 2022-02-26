@@ -35,45 +35,50 @@
   margin-top: 63px;
   /* background-color: aqua; */
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 56px;
   align-items: center;
 }
 
+/* .brands .line-3 div {
+  width: 8rem;
+} */
+
 .brands-desc {
   /* background-color: blueviolet; */
-  margin-top: 120px;
-  display: flex;
-  justify-content: center;
+  /* margin-top: 120px; */
+  /* display: flex; */
+  /* justify-content: center; */
 }
 
 .brands-desc > div {
-  display: flex;
-  width: 90%;
-  height: 180px;
-  border-radius: 90px;
+  /* display: flex; */
+  /* width: 90%; */
+  /* height: 180px; */
+  /* border-radius: 90px; */
   /* background-color: #edf2f4; */
-  background-color: #f1eff9;
+  /* background-color: #f1eff9; */
 }
 
 .brands-desc > div > div:nth-child(1) {
-  flex: 50%;
-  display: flex;
+  /* flex: 50%; */
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   /* background-color: red; */
 }
 
 .brands-desc > div > div:nth-child(1) > p {
-  color: var(--color-subheading);
+  /* color: var(--color-subheading);
   width: 70%;
   font-size: 40px;
   line-height: 48px;
-  font-weight: bold;
+  font-weight: bold; */
 }
 
 .brands-desc > div > div:nth-child(2) {
-  flex: 50%;
+  /* flex: 50%; */
   display: flex;
   flex-direction: column;
   justify-content: center;

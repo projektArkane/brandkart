@@ -1,5 +1,5 @@
 import React from "react";
-import "./navbar.css";
+// import "./navbar.css";
 
 import { logos } from "../../constants";
 import { BiMenu } from "react-icons/bi";
@@ -8,64 +8,56 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="bk-navbar">
-      <div className="bk-navbar-smallscreen">
-        <BiMenu color="black" fontSize={30} onClick={() => null} />
+    <nav className="px-8 md:px-20 flex items-center py-10">
+      <div className="md:hidden mr-2">
+        <BiMenu className="text-2xl" color="black" onClick={() => null} />
       </div>
-      <div className="leftSide">
-        <div className="bk-logo">
+      <div className="flex items-center">
+        <div className="flex-shrink-0 w-6">
           <Link to="/">
             <img src={logos.brandkart} alt="logo" />
           </Link>
         </div>
-        <div className="brand-title">
+        <div className="ml-2">
           <Link to="/">
-            <span>BrandKart</span>
+            <span className="text-sm md:text-lg lg:text-xl">BrandKart</span>
           </Link>
         </div>
       </div>
 
-      <ul className="rightSide bk-navbar-links">
-        <div className="bk-navbar-links-largescreen">
-          <li>
-            <a href="#">Services</a>
-          </li>
-          <li>
-            <a href="#">Our Work</a>
-          </li>
-          <li>
-            <button className="login-btn" type="button">
-              Login
+      <ul className="flex-1 flex items-center justify-end">
+        <li className="mr-10 hidden md:flex">
+          <a className="text-xs md:text-lg" href="#">
+            Services
+          </a>
+        </li>
+        <li className="mr-10 hidden md:flex">
+          <a className="text-xs md:text-lg" href="#">
+            Our Work
+          </a>
+        </li>
+        <li className="hidden lg:flex mr-10">
+          <button
+            className="text-xs md:text-lg border-solid border-2 border-purple px-3 lg:px-5 py-2 rounded-md"
+            id="login-btn"
+            type="button"
+          >
+            Login
+          </button>
+        </li>
+        <li>
+          <Link to="/getstarted">
+            <button
+              className="text-xs md:text-lg border-solid border-2 border-purple bg-purple text-white px-3 lg:px-4 py-2 rounded-md"
+              type="button"
+            >
+              Get Started
             </button>
-          </li>
-        </div>
-
-        <div>
-          <li>
-            <Link to="/getstarted">
-              <button className="getstarted-btn-lg" type="button">
-                Get Started
-              </button>
-            </Link>
-          </li>
-        </div>
+          </Link>
+        </li>
       </ul>
     </nav>
   );
 };
 
 export default Navbar;
-
-{
-  /* <div className="bk__navbar-links">
-        <div className="bk__navbar-links_logo">
-          <img src={logo} alt="logo" />
-        </div>
-        <div className="bk__navbar-links_container">
-          <p><a href="#services">Services</a></p>
-          <p><a href="#services">Our Work</a></p>
-          <p><a href="#services">Services</a></p>
-          <p><a href="#services">Services</a></p>
-        </div>
-      </div> */
-}

@@ -21,6 +21,8 @@ import au3 from "../assets/images/au3.png";
 import au4 from "../assets/images/au4.png";
 import au5 from "../assets/images/au5.png";
 
+import auimages from "../assets/images/auimages.png";
+
 export default {
   hero_image,
   au1,
@@ -28,6 +30,7 @@ export default {
   au3,
   au4,
   au5,
+  auimages,
   services_image1,
   services_image2,
   services_image3,
