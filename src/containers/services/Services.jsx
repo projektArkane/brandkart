@@ -157,7 +157,7 @@ const Services = () => {
           </AccordionSummary>
           <AccordionDetails>
             <img src={images.services_image1} alt="image" />
-            <p className="text-renownBlack text-base md:text-2xl px-0">
+            <p className="text-renownBlack text-base md:text-xl px-0 md:px-6">
               State your primary requirements like Platform, Influencer
               category, Number of influencers, Geography, Timeline, Budget etc.
             </p>
@@ -180,7 +180,7 @@ const Services = () => {
           </AccordionSummary>
           <AccordionDetails>
             <img src={images.services_image2} alt="image" />
-            <p className="text-renownBlack text-base md:text-2xl px-0">
+            <p className="text-renownBlack text-base md:text-xl px-0 md:px-6">
               Browse through the influencer spectrum, use advanced filters and
               shortlist the most relevant influencers for the campaign.
             </p>
@@ -203,7 +203,7 @@ const Services = () => {
           </AccordionSummary>
           <AccordionDetails>
             <img src={images.services_image3} alt="image" />
-            <p className="text-renownBlack text-base md:text-2xl px-0">
+            <p className="text-renownBlack text-base md:text-xl px-0 md:px-6">
               Define the deliverables requirement and circulate the campaign for
               final approval and monitor the status with real-time campaign
               dashboard.

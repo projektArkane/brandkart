@@ -86,12 +86,12 @@
 }
 
 .brands-desc > div > div:nth-child(2) > h3 {
-  font-size: 26px;
+  /* font-size: 26px; */
   line-height: 31px;
   color: #828282;
 }
 .brands-desc > div > div:nth-child(2) > h3 > span {
-  font-size: 26px;
+  /* font-size: 26px; */
   font-weight: bold;
   color: var(--color-subheading);
   line-height: 31px;

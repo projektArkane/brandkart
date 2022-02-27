@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
           <span className="ml-3 text-base">BrandKart</span>
         </div>
-        <p style={{ color: "#717885" }} className="mt-6 text-xs">
+        <p style={{ color: "#717885" }} className="mt-6 text-xs md:text-sm">
           © 2022 Brandkart.Co. All Rights Reserved
         </p>
       </div>
@@ -72,17 +72,17 @@ const Footer = () => {
       >
         <ul>
           <li>
-            <a className="text-xs" href="#">
+            <a className="text-xs md:text-base" href="#">
               About Us
             </a>
           </li>
           <li>
-            <a className="text-xs" href="#">
+            <a className="text-xs md:text-base" href="#">
               Contact Us
             </a>
           </li>
           <li>
-            <a className="text-sm" href="#">
+            <a className="text-xs md:text-base" href="#">
               Terms of Use
             </a>
           </li>
@@ -90,24 +90,24 @@ const Footer = () => {
 
         <ul>
           <li>
-            <a className="text-xs" href="#">
+            <a className="text-xs md:text-base" href="#">
               Privacy Policy
             </a>
           </li>
           <li>
-            <a className="text-xs" href="#">
+            <a className="text-xs md:text-base" href="#">
               Platform Guidlines
             </a>
           </li>
           <li>
-            <a className="text-xs" href="#">
+            <a className="text-xs md:text-base" href="#">
               Content & Creation Guidelines
             </a>
           </li>
         </ul>
       </div>
 
-      <ul className="hidden sm:flex sm:gap-2">
+      <ul className="hidden xl:relative xl:right-10 sm:flex sm:gap-2">
         <li>
           <div
             style={{ backgroundColor: "#3B5998" }}

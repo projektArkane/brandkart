@@ -48,6 +48,7 @@ module.exports = {
         purple: "#6E53CB",
         renownBlack: "#1E2228",
         bkBlack: "#00265F",
+        bkBlack2: "#1D252D",
       },
       lineHeight: {
         "hero-title": "78px",

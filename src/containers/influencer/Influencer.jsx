@@ -40,7 +40,7 @@ const Influencer = () => {
   };
 
   return (
-    <div className="px-8 mt-24">
+    <div className="influencer-bg px-8 md:px-20 mt-24">
       <div className="flex justify-center">
         <h3 className="text-purple text-xl font-semibold uppercase">
           Influencers

@@ -12,16 +12,28 @@ import { Footer } from "./containers";
 
 import { Home, GetStarted } from "./pages";
 
+import { StartNow } from "./pages";
+import { JoinNow } from "./pages";
+
+import { Join } from "./pages";
+import { Start } from "./pages";
+
 const App = () => {
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/getstarted" element={<GetStarted />} />
-        </Routes>
-      </Router>
-    </LocalizationProvider>
+    <div className="app">
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/getstarted" element={<GetStarted />} />
+            <Route path="/getstarted/startnow" element={<StartNow />} />
+            <Route path="/getstarted/joinnow" element={<JoinNow />} />
+            {/* <Route path="/getstarted/start" element={<Start />} /> */}
+            {/* <Route path="/getstarted/join" element={<Join />} /> */}
+          </Routes>
+        </Router>
+      </LocalizationProvider>
+    </div>
   );
 };
 

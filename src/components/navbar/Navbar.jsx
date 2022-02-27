@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="px-8 md:px-20 flex items-center py-10">
+    <nav className="px-8 md:px-20 flex items-center pt-10 pb-5">
       <div className="md:hidden mr-2">
         <BiMenu className="text-2xl" color="black" onClick={() => null} />
       </div>
@@ -20,25 +20,25 @@ const Navbar = () => {
         </div>
         <div className="ml-2">
           <Link to="/">
-            <span className="text-sm md:text-lg lg:text-xl">BrandKart</span>
+            <span className="text-base md:text-lg lg:text-xl">BrandKart</span>
           </Link>
         </div>
       </div>
 
       <ul className="flex-1 flex items-center justify-end">
         <li className="mr-10 hidden md:flex">
-          <a className="text-xs md:text-lg" href="#">
+          <a className="text-xs md:text-base" href="#">
             Services
           </a>
         </li>
         <li className="mr-10 hidden md:flex">
-          <a className="text-xs md:text-lg" href="#">
+          <a className="text-xs md:text-base" href="#">
             Our Work
           </a>
         </li>
         <li className="hidden lg:flex mr-10">
           <button
-            className="text-xs md:text-lg border-solid border-2 border-purple px-3 lg:px-5 py-2 rounded-md"
+            className="text-xs md:text-base border-solid border-2 border-purple px-3 lg:px-5 py-2 rounded-md"
             id="login-btn"
             type="button"
           >
@@ -48,7 +48,7 @@ const Navbar = () => {
         <li>
           <Link to="/getstarted">
             <button
-              className="text-xs md:text-lg border-solid border-2 border-purple bg-purple text-white px-3 lg:px-4 py-2 rounded-md"
+              className="text-xs md:text-base border-solid border-2 border-purple bg-purple text-white px-3 lg:px-4 py-2 rounded-md"
               type="button"
             >
               Get Started
