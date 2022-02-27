@@ -67,22 +67,22 @@ const Footer = () => {
       </ul>
 
       <div
-        style={{ color: "#545960", fontSize: 14, lineHeight: "2rem" }}
-        className="flex sm:mt-0 mt-5 gap-10 md:gap-32"
+        style={{ color: "#545960", lineHeight: "2rem" }}
+        className="flex sm:mt-0 mt-5 gap-10 md:gap-32 lg:gap-44"
       >
         <ul>
           <li>
-            <a className="text-xs md:text-base" href="#">
+            <a className="text-xs lg:text-sm" href="#">
               About Us
             </a>
           </li>
           <li>
-            <a className="text-xs md:text-base" href="#">
+            <a className="text-xs lg:text-sm" href="#">
               Contact Us
             </a>
           </li>
           <li>
-            <a className="text-xs md:text-base" href="#">
+            <a className="text-xs lg:text-sm" href="#">
               Terms of Use
             </a>
           </li>
@@ -90,17 +90,17 @@ const Footer = () => {
 
         <ul>
           <li>
-            <a className="text-xs md:text-base" href="#">
+            <a className="text-xs lg:text-sm" href="#">
               Privacy Policy
             </a>
           </li>
           <li>
-            <a className="text-xs md:text-base" href="#">
+            <a className="text-xs lg:text-sm" href="#">
               Platform Guidlines
             </a>
           </li>
           <li>
-            <a className="text-xs md:text-base" href="#">
+            <a className="text-xs lg:text-sm" href="#">
               Content & Creation Guidelines
             </a>
           </li>
