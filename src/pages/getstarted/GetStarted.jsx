@@ -564,11 +564,11 @@ const Backdrop = styled("div")`
 `;
 
 const stylebox1 = {
-  width: "70%",
-
+  width: "100vw",
+  height: "100vh",
   bgcolor: "white",
   // border: "2px solid #000",
-  borderRadius: "20px",
+  // borderRadius: "20px",
   p: 2,
   px: 6,
   pb: 3,
@@ -587,7 +587,8 @@ const stylebox2 = {
 
 const styleChildModal = {
   // width: "70%",
-
+  width: "100vw",
+  height: "100vh",
   bgcolor: "white",
   // border: "2px solid #000",
   borderRadius: "20px",
