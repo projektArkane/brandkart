@@ -60,24 +60,28 @@ const Influencer = () => {
           // pagination={{
           //   clickable: true,
           // }}
-          // breakpoints={{
-          //   "@0.00": {
-          //     slidesPerView: 1,
-          //     spaceBetween: 10,
-          //   },
-          //   "@0.75": {
-          //     slidesPerView: 2,
-          //     spaceBetween: 20,
-          //   },
-          //   "@1.00": {
-          //     slidesPerView: 3,
-          //     spaceBetween: 30,
-          //   },
-          //   "@1.50": {
-          //     slidesPerView: 4,
-          //     spaceBetween: 30,
-          //   },
-          // }}
+          breakpoints={{
+            "@0.00": {
+              slidesPerView: 1,
+              slidesPerGroup: 1,
+              spaceBetween: 10,
+            },
+            "@0.75": {
+              slidesPerView: 2,
+              slidesPerGroup: 2,
+              spaceBetween: 20,
+            },
+            "@1.00": {
+              slidesPerView: 3,
+              slidesPerGroup: 3,
+              spaceBetween: 30,
+            },
+            "@1.50": {
+              slidesPerView: 4,
+              slidesPerGroup: 4,
+              spaceBetween: 30,
+            },
+          }}
           autoplay={{
             delay: 4000,
             disableOnInteraction: false,
@@ -154,7 +158,7 @@ const Card = ({ image, name, type }) => {
         </div>
       </div>
       <div className="py-5">
-        <h3 className="font-medium text-xs md:text-base lg:text-lg text-bkBlack2 text-center">
+        <h3 className="font-medium text-base lg:text-lg text-bkBlack2 text-center">
           {name}
         </h3>
         <h4
