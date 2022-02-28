@@ -141,8 +141,13 @@ const StartNow = () => {
                       <MenuItem value={"Fashion Designing"}>
                         Content Creator
                       </MenuItem>
-                      <MenuItem value={20}>Youtuber</MenuItem>
-                      <MenuItem value={30}>Dancer</MenuItem>
+                      <MenuItem value={"Travel Vlogger"}>
+                        Travel Vlogger
+                      </MenuItem>
+                      <MenuItem value={"Nutritionist"}>Nutritionist</MenuItem>
+                      <MenuItem value={"Fitness Expert"}>
+                        Fitness Expert
+                      </MenuItem>
                     </Field>
                   </Grid>
 

@@ -88,12 +88,27 @@ const StartNow = () => {
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
                 setSubmitting(false);
-                alert(JSON.stringify(values, null, 2));
+                // alert(JSON.stringify(values, null, 2));
               }, 500);
+              fetch("https://api.sheetmonkey.io/form/9oWZbhbaRsvXkYR5AeymUw", {
+                method: "POST",
+                body: JSON.stringify(values),
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              })
+                .then((response) => response.json())
+                .then((response) =>
+                  console.log("Success:", JSON.stringify(response))
+                )
+                .catch((error) => console.error("Error:", error));
             }}
           >
             {({ submitForm, isSubmitting }) => (
-              <Form autoComplete="off">
+              <Form
+                // action="https://api.sheetmonkey.io/form/9oWZbhbaRsvXkYR5AeymUw"
+                autoComplete="off"
+              >
                 <Grid container spacing={3}>
                   <Grid item xs={12} sm={12}>
                     <h4 className="my-3">Name</h4>
@@ -181,6 +196,7 @@ const StartNow = () => {
                 {isSubmitting && <LinearProgress />}
                 <br />
                 <Button
+                  type="submit"
                   sx={{ marginBottom: 8, marginTop: 6 }}
                   variant="contained"
                   color="primary"
@@ -189,6 +205,7 @@ const StartNow = () => {
                 >
                   Submit
                 </Button>
+                {/* <button type="submit">Submit Form</button> */}
               </Form>
             )}
           </Formik>

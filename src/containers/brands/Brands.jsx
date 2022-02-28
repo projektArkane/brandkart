@@ -5,7 +5,7 @@ import { logos, images } from "../../constants";
 
 const Brands = () => {
   return (
-    <div className="brands mt-10">
+    <div id="brands-container" className="brands mt-10">
       <div className="flex justify-center">
         <h3 className="text-purple text-lg md:text-xl font-semibold uppercase">
           Brands

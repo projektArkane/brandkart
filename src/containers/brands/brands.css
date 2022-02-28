@@ -3,6 +3,13 @@
   padding: 1rem 5.5rem 6rem 5.5rem;
 }
 
+#brands-container {
+  background-image: url(../../assets/images/gradient-2.png);
+  background-size: cover;
+
+  /* background-size: ; */
+}
+
 .brands .line-1 {
   /* background-color: red; */
   display: flex;

@@ -62,7 +62,10 @@ const ColorButton = styled(Button)(({ theme }) => ({
 
 const Header = () => {
   return (
-    <div className="flex flex-col lg:flex-row px-8 lg:px-20">
+    <div
+      id="header-container"
+      className="flex flex-col lg:flex-row px-8 lg:px-20"
+    >
       <div className="flex-1">
         <h1 className="mt-20 text-bkBlack2 text-center leading-snug lg:leading-hero-title lg:text-left lg:pr-32 text-4xl lg:text-headerTitle font-bold">
           Brand Requirements Simplified

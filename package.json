@@ -1,10 +1,8 @@
 {
-  "homepage": "https://projektArkane.github.io/brandkart",
   "name": "brandkart",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@date-io/date-fns": "^2.13.1",
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",
     "@headlessui/react": "^1.5.0",
@@ -25,15 +23,13 @@
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
-    "react-slick": "^0.28.1",
-    "slick-carousel": "^1.8.1",
     "swiper": "^8.0.6",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },
   "scripts": {
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -127,7 +127,7 @@ const Services = () => {
   console.log("the active service is: ", activeService);
 
   return (
-    <div className="services px-8 md:px-20 xl:mt-10">
+    <div id="services-section" className="services px-8 md:px-20 xl:mt-10">
       <div className="flex justify-center">
         <h3 className="text-purple text-xl font-semibold uppercase">
           Services
