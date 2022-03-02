@@ -6,17 +6,10 @@ import LocalizationProvider from "@mui/lab/LocalizationProvider";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { Navbar } from "./components";
-
-import { Footer } from "./containers";
-
 import { Home, GetStarted } from "./pages";
 
 import { StartNow } from "./pages";
 import { JoinNow } from "./pages";
-
-import { Join } from "./pages";
-import { Start } from "./pages";
 
 const App = () => {
   return (

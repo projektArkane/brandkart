@@ -21,3 +21,7 @@
   /* width: "100vw"; */
   /* height: 300px; */
 }
+
+.swiper-pagination-bullet {
+  margin-top: 30px;
+}

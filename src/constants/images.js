@@ -4,22 +4,22 @@ import services_image1 from "../assets/images/services_image1.png";
 import services_image2 from "../assets/images/services_image2.png";
 import services_image3 from "../assets/images/services_image3.png";
 
-import influencer1 from "../assets/images/influencer1.png";
-import influencer2 from "../assets/images/influencer2.png";
-import influencer3 from "../assets/images/influencer3.png";
-import influencer4 from "../assets/images/influencer4.png";
+import ranveersingh from "../assets/images/ranveersingh.jpeg";
+import nehakakkar from "../assets/images/nehakakkar.jpeg";
+import tanmaybhatt from "../assets/images/tanmaybhatt.jpeg";
+import neerajchopra from "../assets/images/neerajchopra.jpeg";
 
-import gradient1 from "../assets/images/gradient-1.png";
-import gradient2 from "../assets/images/gradient-2.png";
-import gradient3 from "../assets/images/gradient-3.png";
-import gradient4 from "../assets/images/gradient-4.png";
-import gradient5 from "../assets/images/gradient-5.png";
-import gradient6 from "../assets/images/gradient-6.png";
-import gradient7 from "../assets/images/gradient-7.png";
+import ranveerallabadia from "../assets/images/ranveerallabadia.jpeg";
+import rajshamani from "../assets/images/rajshamani.jpeg";
+import mandirabedi from "../assets/images/mandirabedi.jpeg";
+import gauravchoudhary from "../assets/images/gauravchoudhary.jpeg";
 
-import testimonial_girl from "../assets/images/testimonial_girl.png";
+import sanjeevkapoor from "../assets/images/sanjeevkapoor.jpeg";
+import fayeDSouza from "../assets/images/fayeDSouza.jpeg";
+import travelcouple from "../assets/images/travelcouple.jpeg";
+import elnaz from "../assets/images/elnaz.png";
+
 import dots from "../assets/images/dots.png";
-import dots_blue from "../assets/images/dots_blue.png";
 import quote_sign from "../assets/images/quote_sign.png";
 
 import auimages from "../assets/images/auimages.png";
@@ -30,19 +30,22 @@ export default {
   services_image1,
   services_image2,
   services_image3,
-  influencer1,
-  influencer2,
-  influencer3,
-  influencer4,
-  testimonial_girl,
+
+  ranveersingh,
+  nehakakkar,
+  tanmaybhatt,
+  neerajchopra,
+
+  ranveerallabadia,
+  rajshamani,
+  mandirabedi,
+  gauravchoudhary,
+
+  sanjeevkapoor,
+  elnaz,
+  travelcouple,
+  fayeDSouza,
+
   dots,
-  dots_blue,
   quote_sign,
-  gradient1,
-  gradient2,
-  gradient3,
-  gradient4,
-  gradient5,
-  gradient6,
-  gradient7,
 };

@@ -98,13 +98,12 @@ const Services = () => {
         </div>
         <div>
           <h2
-            className=" lg:text-2xl xl:text-serCara cursor-pointer"
+            className=" lg:text-2xl xl:text-serCara pb-4 cursor-pointer"
             style={{ fontWeight: fontWeight, color: textColor }}
             onClick={() => setActiveService(title)}
           >
             {title}
           </h2>
-          <p>Features</p>
         </div>
         <div className="text-serCara flex items-center">
           <BsArrowRight color={numberColor} />
@@ -129,12 +128,12 @@ const Services = () => {
   return (
     <div id="services-section" className="services px-8 md:px-20 xl:mt-10">
       <div className="flex justify-center">
-        <h3 className="text-purple text-xl font-semibold uppercase">
+        <h3 className="text-purple text-lg md:text-xl font-medium uppercase">
           Services
         </h3>
       </div>
       <div className="flex justify-center">
-        <p className="mt-5 font-semibold text-center text-4xl xl:text-secHeading xl:leading-secHeading">
+        <p className="mt-5 text-subhead font-semibold text-center text-2xl ss:text-3xl md:text-4xl xl:text-secHeading xl:leading-secHeading">
           How we make it simpler
         </p>
       </div>

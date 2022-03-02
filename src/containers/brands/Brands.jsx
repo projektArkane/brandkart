@@ -5,38 +5,35 @@ import { logos, images } from "../../constants";
 
 const Brands = () => {
   return (
-    <div id="brands-container" className="brands mt-10">
+    <div className="brands mt-10">
       <div className="flex justify-center">
-        <h3 className="text-purple text-lg md:text-xl font-semibold uppercase">
+        <h3 className="text-purple text-lg md:text-xl font-medium uppercase">
           Brands
         </h3>
       </div>
       <div className="flex justify-center">
-        <p className="mt-5 font-semibold text-center text-2xl md:text-4xl xl:text-secHeading xl:leading-secHeading">
+        <p className="mt-5 text-subhead font-semibold text-center text-2xl ss:text-3xl md:text-4xl xl:text-secHeading xl:leading-secHeading">
           Brands who love our work
         </p>
       </div>
       <div className="line-3">
         <div className="w-20 sm:w-28 md:w-32 lg:w-36">
-          <img src={logos.google} alt="" />
+          <img src={logos.nestle} alt="" />
+        </div>
+        <div className="w-20 sm:w-28 md:w-32 lg:w-28">
+          <img src={logos.haier} alt="" />
         </div>
         <div className="w-20 sm:w-28 md:w-32 lg:w-36">
-          <img src={logos.tiktok} alt="" />
+          <img src={logos.hoichoi} alt="" />
         </div>
         <div className="w-20 sm:w-28 md:w-32 lg:w-36">
-          <img src={logos.airbnb} alt="" />
+          <img src={logos.milaap} alt="" />
+        </div>
+        <div className="w-20 sm:w-28 md:w-32 lg:w-24">
+          <img src={logos.grb} alt="" />
         </div>
         <div className="w-20 sm:w-28 md:w-32 lg:w-36">
-          <img src={logos.ubereats} alt="" />
-        </div>
-        <div className="w-20 sm:w-28 md:w-32 lg:w-36">
-          <img src={logos.pinterest} alt="" />
-        </div>
-        <div
-          className="w-20 sm:w-28 md:w-32 lg:w-36"
-          style={{ position: "relative", top: 8 }}
-        >
-          <img src={logos.amazon} alt="" />
+          <img src={logos.myprotein} alt="" />
         </div>
       </div>
       <div className="brands-desc flex justify-center mt-20 xl:mt-40">

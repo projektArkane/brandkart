@@ -1,17 +1,18 @@
 import brandkart from "../assets/logos/brandkart.png";
-import amazon from "../assets/logos/amazon.png";
-import airbnb from "../assets/logos/airbnb.png";
-import google from "../assets/logos/google.png";
-import pinterest from "../assets/logos/pinterest.png";
-import tiktok from "../assets/logos/tiktok.png";
-import ubereats from "../assets/logos/ubereats.png";
+
+import nestle from "../assets/logos/nestle.png";
+import haier from "../assets/logos/haier.png";
+import hoichoi from "../assets/logos/hoichoi.png";
+import milaap from "../assets/logos/milaap.png";
+import grb from "../assets/logos/grb.png";
+import myprotein from "../assets/logos/myprotein.png";
 
 export default {
   brandkart,
-  amazon,
-  airbnb,
-  google,
-  pinterest,
-  tiktok,
-  ubereats,
+  nestle,
+  haier,
+  hoichoi,
+  milaap,
+  grb,
+  myprotein,
 };

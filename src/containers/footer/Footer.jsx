@@ -13,7 +13,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="p-8 ss:px-20 sm:flex md:justify-between sm:items-start">
+    <div className="p-8 md:px-20 md:flex md:justify-between sm:items-start">
       <div>
         <div className="flex items-center">
           <div className="w-8">
@@ -21,12 +21,12 @@ const Footer = () => {
           </div>
           <span className="ml-3 text-base">BrandKart</span>
         </div>
-        <p style={{ color: "#717885" }} className="mt-6 text-xs md:text-sm">
+        <p style={{ color: "#717885" }} className="mt-6 text-xs lg:text-sm">
           © 2022 Brandkart.Co. All Rights Reserved
         </p>
       </div>
 
-      <ul className="mt-5 flex sm:hidden gap-4">
+      <ul className="mt-5 flex md:hidden gap-4">
         <li>
           <div
             style={{ backgroundColor: "#3B5998" }}
@@ -45,7 +45,9 @@ const Footer = () => {
         </li>
         <li>
           <div className="insta-bg p-2 sm:p-3 rounded-full text-white">
-            <FaInstagram />
+            <a href="https://www.instagram.com/brandkart.co/">
+              <FaInstagram />
+            </a>
           </div>
         </li>
         <li>
@@ -68,7 +70,7 @@ const Footer = () => {
 
       <div
         style={{ color: "#545960", lineHeight: "2rem" }}
-        className="flex sm:mt-0 mt-5 gap-10 md:gap-32 lg:gap-44"
+        className="flex mt-5 md:mt-0 gap-4 lg:gap-32 xl:gap-44"
       >
         <ul>
           <li>
@@ -107,7 +109,7 @@ const Footer = () => {
         </ul>
       </div>
 
-      <ul className="hidden xl:relative xl:right-10 sm:flex sm:gap-2">
+      <ul className="hidden xl:relative xl:right-10 md:flex sm:gap-2">
         <li>
           <div
             style={{ backgroundColor: "#3B5998" }}
@@ -126,7 +128,10 @@ const Footer = () => {
         </li>
         <li>
           <div className="p-3 sm:p-2 md:p-3 insta-bg rounded-full text-white">
-            <FaInstagram />
+            <a href="https://www.instagram.com/brandkart.co/">
+              {" "}
+              <FaInstagram />
+            </a>
           </div>
         </li>
         <li>

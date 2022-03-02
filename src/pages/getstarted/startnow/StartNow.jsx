@@ -3,44 +3,12 @@ import React from "react";
 import { Navbar } from "../../../components";
 import Footer from "../../../containers/footer/Footer";
 
-import {
-  Button,
-  LinearProgress,
-  FormControl,
-  MenuItem,
-  FormControlLabel,
-} from "@mui/material";
+import { Button, LinearProgress, MenuItem } from "@mui/material";
 
 import { Formik, Form, Field } from "formik";
 import { TextField, Select, CheckboxWithLabel } from "formik-mui";
-// import { MenuItem } from "@mui/material";
 
 import { Grid } from "@mui/material";
-
-import Fade from "@mui/material/Fade";
-import Backdrop from "@mui/material/Backdrop";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import { FlashAutoOutlined } from "@mui/icons-material";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  // width: "70vw",
-  bgcolor: "background.paper",
-  // border: "2px solid #000",
-  // borderRadius: 2,
-  boxShadow: 24,
-  // p: 4,
-};
-
-// interface Values {
-//   businessEmail: string;
-//   password: string;
-// }
-
 const StartNow = () => {
   return (
     <div className="flex flex-col justify-between h-screen">
@@ -90,7 +58,8 @@ const StartNow = () => {
                 setSubmitting(false);
                 // alert(JSON.stringify(values, null, 2));
               }, 500);
-              fetch("https://api.sheetmonkey.io/form/9oWZbhbaRsvXkYR5AeymUw", {
+              // fetch("https://api.sheetmonkey.io/form/9oWZbhbaRsvXkYR5AeymUw", {
+              fetch("https://api.sheetmonkey.io/form/vfer4eUSJYu5RjpE2vKhwk", {
                 method: "POST",
                 body: JSON.stringify(values),
                 headers: {
@@ -165,21 +134,9 @@ const StartNow = () => {
                       name="description"
                       label="Select a type"
                     >
-                      <MenuItem value={"Fashion and Lifestyle"}>
-                        Fashion & Lifestyle
-                      </MenuItem>
-                      <MenuItem value={"Food and Restaurant"}>
-                        Food & Restaurant
-                      </MenuItem>
-                      <MenuItem value={"Travel and Tourism"}>
-                        Travel & Tourism
-                      </MenuItem>
-                      <MenuItem value={"Beauty and Skincare"}>
-                        Beauty & Skincare
-                      </MenuItem>
-                      <MenuItem value={"Sports and Fitness"}>
-                        Sports & Fitness
-                      </MenuItem>
+                      <MenuItem value={"B2B"}>B2B</MenuItem>
+                      <MenuItem value={"B2C"}>B2C</MenuItem>
+                      <MenuItem value={"Non-Profit"}>Non-Profit</MenuItem>
                     </Field>
                   </Grid>
                 </Grid>

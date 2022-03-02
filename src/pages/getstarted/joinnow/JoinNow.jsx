@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { Navbar } from "../../../components";
 import Footer from "../../../containers/footer/Footer";
@@ -6,42 +6,192 @@ import Footer from "../../../containers/footer/Footer";
 import {
   Button,
   LinearProgress,
-  FormControl,
   MenuItem,
-  FormControlLabel,
+  TextField,
+  Grid,
+  Select,
+  FormControl,
+  InputLabel,
+  FormHelperText,
 } from "@mui/material";
+import { DatePicker } from "@mui/lab";
+import { useTheme } from "@mui/material/styles";
+import OutlinedInput from "@mui/material/OutlinedInput";
 
-import { Formik, Form, Field, FormikConfig, FormikValues } from "formik";
-import { TextField, Select, CheckboxWithLabel } from "formik-mui";
-// import { MenuItem } from "@mui/material";
-
-import { Grid } from "@mui/material";
-
-import Fade from "@mui/material/Fade";
-import Backdrop from "@mui/material/Backdrop";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import { FlashAutoOutlined } from "@mui/icons-material";
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  // width: "70vw",
-  bgcolor: "background.paper",
-  // border: "2px solid #000",
-  // borderRadius: 2,
-  boxShadow: 24,
-  // p: 4,
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
 };
 
-// interface Values {
-//   businessEmail: string;
-//   password: string;
-// }
+function getStyles(name, personName, theme) {
+  return {
+    fontWeight:
+      personName.indexOf(name) === -1
+        ? theme.typography.fontWeightRegular
+        : theme.typography.fontWeightMedium,
+  };
+}
 
-const StartNow = () => {
+const initialValues = {
+  name: "",
+  email: "",
+  location: "",
+  dateOfBirth: "",
+  gender: "",
+  influencerCategory: "",
+  subCategory: [],
+  instagram: "",
+  youtube: "",
+  website: "",
+  contact: "",
+};
+
+const subCategoryANS = [
+  "Authors & Poets",
+  "Comedian",
+  "Computer & Mobile Gaming",
+  "Dancer",
+  "Fitness & Yoga",
+  "Movies & TV Artist",
+  "Musician",
+  "Photographer",
+  "Sketching & Painting",
+  "Sports & Games",
+];
+
+const subCategoryMNE = [
+  "Automobile",
+  "Business & Career",
+  "Cryptocurrency & NFT",
+  "Education",
+  "Family & Parenting",
+  "Finance Expert",
+  "Health & Medicine",
+  "Podcaster & Speaker",
+  "Technology",
+  "Youtuber",
+];
+
+const subCategoryOM = [
+  "Beauty & Cosmetics",
+  "Environmentalist",
+  "Fashion & Lifestyle",
+  "Food & Restaurant",
+  "News & Media",
+  "Plus Size Model",
+  "Real Estate",
+  "Short Video/Live Streaming",
+  "Social Activist",
+  "Travel & Tourism",
+];
+
+const JoinNow = () => {
+  const theme = useTheme();
+
+  const [values, setValues] = useState(initialValues);
+  const [dob, setDob] = useState(null);
+  const [gender, setGender] = useState("");
+
+  const [allErrors, setAllErrors] = useState({});
+
+  const [influencerCategory, setInfluencerCategory] = useState("");
+
+  const [personName, setPersonName] = React.useState([]);
+  console.log(personName);
+
+  const handleSubCategoryChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    // console.log("this is sub category change: ", event);
+    setPersonName(
+      // On autofill we get a stringified value.
+      typeof value === "string" ? value.split(",") : value
+    );
+    setValues({
+      ...values,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleGenderChange = (event) => {
+    const { name, value } = event.target;
+    setGender(value);
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
+  const handleCategoryChange = (e) => {
+    setPersonName([]);
+    values.subCategory = [];
+    // console.log("this is category event: ", e);
+    const { name, value } = e.target;
+    setInfluencerCategory(value);
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
+  const validate = () => {
+    let temp = {};
+    temp.name = values.name ? "" : "Name is required";
+    // temp.email = /$^|.+@.+..+/.test(values.email) ? "" : "Invalid Email";
+    temp.email =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        values.email
+      )
+        ? ""
+        : "Invalid Email";
+    temp.location = values.location ? "" : "Required";
+    temp.gender = values.gender.length != 0 ? "" : "Required";
+    temp.influencerCategory =
+      values.influencerCategory.length != 0 ? "" : "Required";
+    temp.subCategory = values.subCategory.length != 0 ? "" : "Required";
+    temp.instagram = values.instagram != 0 ? "" : "Required";
+    temp.contact = values.contact.length > 9 ? "" : "Invalid Number";
+    setAllErrors({
+      ...temp,
+    });
+
+    return Object.values(temp).every((x) => x == "");
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validate()) {
+      fetch("https://api.sheetmonkey.io/form/bjRZLqeEvEg4DagP6YemZd", {
+        method: "POST",
+        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((response) => console.log("Success:", JSON.stringify(response)))
+        .catch((error) => console.error("Error:", error));
+    }
+  };
+
+  console.log("All of the values: ", values);
+
   return (
     <div className="flex flex-col justify-between h-screen">
       <Navbar />
@@ -53,176 +203,255 @@ const StartNow = () => {
           Let Brandkart handle your branding needs
         </p>
         <div className="text-bkBlack2">
-          <Formik
-            initialValues={{
-              name: "",
-              location: "",
-              email: "",
-              contactNumber: "",
-              description: "",
-              checkbox: false,
-              instagram: "",
-              twitter: "",
-              youtube: "",
-              website: "",
-            }}
-            validate={(values) => {
-              const errors = {};
-              if (!values.email) {
-                errors.email = "Required";
-              } else if (
-                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-              ) {
-                errors.email = "Invalid email address";
-              }
-              if (!values.name) {
-                errors.name = "Required";
-              }
-              if (!values.contactNumber) {
-                errors.contactNumber = "Required";
-              }
-              return errors;
-            }}
-            onSubmit={(values, { setSubmitting }) => {
-              setTimeout(() => {
-                setSubmitting(false);
-                alert(JSON.stringify(values, null, 2));
-              }, 500);
-            }}
-          >
-            {({ submitForm, isSubmitting }) => (
-              <Form autoComplete="off">
-                <Grid container spacing={3}>
-                  <Grid item xs={12} sm={12}>
-                    <h4 className="my-3">Name</h4>
-                    <Field
-                      className="w-full"
-                      component={TextField}
-                      name="name"
-                      type="text"
-                      label="Enter your name"
-                    />
-                  </Grid>
+          <form autoComplete="off" onSubmit={handleSubmit}>
+            <Grid container spacing={4}>
+              <Grid item xs={12} sm={12}>
+                <h4 className="my-3">Name</h4>
+                <TextField
+                  name="name"
+                  className="w-full"
+                  variant="outlined"
+                  label="Full Name"
+                  value={values.name}
+                  onChange={handleInputChange}
+                  {...(allErrors.name && {
+                    error: true,
+                    helperText: allErrors.name,
+                  })}
+                />
+              </Grid>
 
-                  <Grid item xs={12} sm={6}>
-                    <h4 className="my-3">Business Email</h4>
-                    <Field
-                      className="w-full"
-                      component={TextField}
-                      name="email"
-                      type="email"
-                      label="Email"
-                    />
-                  </Grid>
+              <Grid item xs={12} sm={6}>
+                <h4 className="my-3">Business Email</h4>
+                <TextField
+                  autoComplete="off"
+                  name="email"
+                  className="w-full"
+                  variant="outlined"
+                  label="Email"
+                  value={values.email}
+                  onChange={handleInputChange}
+                  {...(allErrors.email && {
+                    error: true,
+                    helperText: allErrors.email,
+                  })}
+                />
+              </Grid>
 
-                  <Grid item xs={12} sm={6}>
-                    <h4 className="my-3">Location</h4>
-                    <Field
-                      className="w-full"
-                      component={TextField}
-                      name="location"
-                      type="text"
-                      label="Enter Location"
-                    />
-                  </Grid>
+              <Grid item xs={12} sm={6}>
+                <h4 className="my-3">Location</h4>
+                <TextField
+                  name="location"
+                  className="w-full"
+                  variant="outlined"
+                  label="Location"
+                  value={values.location}
+                  onChange={handleInputChange}
+                  {...(allErrors.location && {
+                    error: true,
+                    helperText: allErrors.location,
+                  })}
+                />
+              </Grid>
 
-                  <Grid item xs={12} sm={6}>
-                    <h4 className="my-3">Influencer Category</h4>
-                    <Field
-                      component={Select}
-                      formControl={{
-                        sx: {
-                          width: "100%",
-                        },
-                      }}
-                      name="description"
-                      label="Select a type"
-                    >
-                      <MenuItem value={"Fashion Designing"}>
-                        Content Creator
-                      </MenuItem>
-                      <MenuItem value={"Travel Vlogger"}>
-                        Travel Vlogger
-                      </MenuItem>
-                      <MenuItem value={"Nutritionist"}>Nutritionist</MenuItem>
-                      <MenuItem value={"Fitness Expert"}>
-                        Fitness Expert
-                      </MenuItem>
-                    </Field>
-                  </Grid>
+              <Grid item xs={12} sm={6}>
+                <h4 className="my-3">Date of birth</h4>
+                <DatePicker
+                  name="dateOfBirth"
+                  label="Date of birth"
+                  value={dob}
+                  onChange={(newValue) => {
+                    setDob(newValue);
+                  }}
+                  renderInput={(params) => <TextField {...params} />}
+                />
+              </Grid>
 
-                  <Grid item xs={12} sm={6}>
-                    <h4 className="my-3">Instagram</h4>
-                    <Field
-                      className="w-full"
-                      component={TextField}
-                      name="instagram"
-                      type="text"
-                      label="Enter Instagram Id"
-                    />
-                  </Grid>
-
-                  <Grid item xs={12} sm={6}>
-                    <h4 className="my-3">Twitter</h4>
-                    <Field
-                      className="w-full"
-                      component={TextField}
-                      name="twitter"
-                      type="text"
-                      label="Enter twitter id"
-                    />
-                  </Grid>
-
-                  <Grid item xs={12} sm={6}>
-                    <h4 className="my-3">Youtube</h4>
-                    <Field
-                      className="w-full"
-                      component={TextField}
-                      name="youtube"
-                      type="text"
-                      label="Enter youtube channel"
-                    />
-                  </Grid>
-
-                  <Grid item xs={12} sm={6}>
-                    <h4 className="my-3">Website/Blog</h4>
-                    <Field
-                      className="w-full"
-                      component={TextField}
-                      name="website"
-                      type="text"
-                      label="Enter Website"
-                    />
-                  </Grid>
-
-                  <Grid item xs={12} sm={6}>
-                    <h4 className="my-3">Contact Number</h4>
-                    <Field
-                      className="w-full"
-                      component={TextField}
-                      name="contactNumber"
-                      type="number"
-                      label="Enter contact number"
-                    />
-                  </Grid>
-                </Grid>
-
-                <br />
-
-                {isSubmitting && <LinearProgress />}
-                <br />
-                <Button
-                  sx={{ marginBottom: 8, marginTop: 6 }}
-                  variant="contained"
-                  color="primary"
-                  disabled={isSubmitting}
-                  onClick={submitForm}
+              <Grid item xs={12} sm={6}>
+                <h4 className="my-3">Gender</h4>
+                <FormControl
+                  fullWidth
+                  {...(allErrors.gender && { error: true })}
                 >
-                  Submit
-                </Button>
-              </Form>
-            )}
-          </Formik>
+                  <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+                  <Select
+                    name="gender"
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={gender}
+                    label="Age"
+                    onChange={handleGenderChange}
+                  >
+                    <MenuItem value={"Male"}>Male</MenuItem>
+                    <MenuItem value={"Female"}>Female</MenuItem>
+                  </Select>
+                  {allErrors.gender && (
+                    <FormHelperText>{allErrors.gender}</FormHelperText>
+                  )}
+                </FormControl>
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <h4 className="my-3">Influencer Category</h4>
+                <FormControl
+                  fullWidth
+                  {...(allErrors.influencerCategory && { error: true })}
+                >
+                  <InputLabel id="category">Category</InputLabel>
+                  <Select
+                    name="influencerCategory"
+                    labelId="category"
+                    id="demo-simple"
+                    value={influencerCategory}
+                    label="Category"
+                    onChange={handleCategoryChange}
+                  >
+                    <MenuItem value={"Art & Skill"}>Art & Skill</MenuItem>
+                    <MenuItem value={"Mentor & Expert"}>
+                      Mentor & Expert
+                    </MenuItem>
+                    <MenuItem value={"Opinion Maker"}>Opinion Maker</MenuItem>
+                  </Select>
+                  {allErrors.influencerCategory && (
+                    <FormHelperText>
+                      {allErrors.influencerCategory}
+                    </FormHelperText>
+                  )}
+                </FormControl>
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <h4 className="my-3">Sub Category</h4>
+
+                <FormControl
+                  className="w-full"
+                  {...(allErrors.subCategory && { error: true })}
+                >
+                  {/* <InputLabel id="demo-multiple-name-label">
+                    Sub Category
+                  </InputLabel> */}
+                  <Select
+                    name="subCategory"
+                    labelId="demo-multiple-name-label"
+                    id="demo-multiple-name"
+                    multiple
+                    value={personName}
+                    onChange={handleSubCategoryChange}
+                    input={<OutlinedInput label="" />}
+                    MenuProps={MenuProps}
+                  >
+                    {/* {subCategoryANS.map((name) => (
+                      <MenuItem
+                        key={name}
+                        value={name}
+                        style={getStyles(name, personName, theme)}
+                      >
+                        {name}
+                      </MenuItem>
+                    ))} */}
+                    {values.influencerCategory === "Art & Skill"
+                      ? subCategoryANS.map((name) => (
+                          <MenuItem
+                            key={name}
+                            value={name}
+                            style={getStyles(name, personName, theme)}
+                          >
+                            {name}
+                          </MenuItem>
+                        ))
+                      : values.influencerCategory === "Mentor & Expert"
+                      ? subCategoryMNE.map((name) => (
+                          <MenuItem
+                            key={name}
+                            value={name}
+                            style={getStyles(name, personName, theme)}
+                          >
+                            {name}
+                          </MenuItem>
+                        ))
+                      : values.influencerCategory === "Opinion Maker"
+                      ? subCategoryOM.map((name) => (
+                          <MenuItem
+                            key={name}
+                            value={name}
+                            style={getStyles(name, personName, theme)}
+                          >
+                            {name}
+                          </MenuItem>
+                        ))
+                      : null}
+                  </Select>
+                  {allErrors.subCategory && (
+                    <FormHelperText>{allErrors.subCategory}</FormHelperText>
+                  )}
+                </FormControl>
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <h4 className="my-3">Instagram</h4>
+                <TextField
+                  name="instagram"
+                  className="w-full"
+                  variant="outlined"
+                  label="Instagram"
+                  value={values.instagram}
+                  onChange={handleInputChange}
+                  {...(allErrors.instagram && {
+                    error: true,
+                    helperText: allErrors.instagram,
+                  })}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <h4 className="my-3">Youtube (optional)</h4>
+                <TextField
+                  name="youtube"
+                  className="w-full"
+                  variant="outlined"
+                  label="Youtube"
+                  value={values.youtube}
+                  onChange={handleInputChange}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <h4 className="my-3">Website/Blog (optional)</h4>
+                <TextField
+                  name="website"
+                  className="w-full"
+                  variant="outlined"
+                  label="Domain"
+                  value={values.website}
+                  onChange={handleInputChange}
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <h4 className="my-3">Contact Number</h4>
+                <TextField
+                  name="contact"
+                  className="w-full"
+                  variant="outlined"
+                  label="Number"
+                  value={values.contact}
+                  onChange={handleInputChange}
+                  {...(allErrors.contact && {
+                    error: true,
+                    helperText: allErrors.contact,
+                  })}
+                />
+              </Grid>
+            </Grid>
+
+            <br />
+            <button
+              className="mt-8 bg-purple text-white px-4 text-base py-2 font-medium rounded-md"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
         </div>
       </div>
       <Footer />
@@ -230,15 +459,4 @@ const StartNow = () => {
   );
 };
 
-export default StartNow;
-
-// export function FormikStepper({
-//   children,
-//   ...props
-// }: FormikConfig<FormikValues>) {
-//   return (
-//     <Formik {...props}>
-//       <Form autoComplete="off">{children}</Form>
-//     </Formik>
-//   );
-// }
+export default JoinNow;

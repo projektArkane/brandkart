@@ -55,3 +55,21 @@
 /* .influencer-carousel {
   margin-top: 48px;
 } */
+
+@media only screen and (max-width: 640px) {
+  .influencer-card {
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .influencer-card {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .influencer-card {
+    height: 700px;
+  }
+}
