@@ -1,5 +1,15 @@
 .testimonials {
-  /* background-color: white; */
+  background-color: #eeeeee;
+}
+
+.testimony-card {
+  /* background-color: blueviolet; */
+  background-color: #eeeeee;
+
+  height: 300px;
+}
+
+.testimony-textbox {
 }
 
 #rm-btn {

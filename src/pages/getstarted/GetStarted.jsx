@@ -19,7 +19,7 @@ const GetStarted = () => {
   };
 
   return (
-    <div className="bg-white flex getstarted flex-col">
+    <div className="flex getstarted flex-col">
       {/* <div className="gradient-green-container gradient-green"></div> */}
       {/* <div className="gradient-red-container gradient-red"></div> */}
       {/* <div className="gradient-purple-container gradient-purple"></div> */}

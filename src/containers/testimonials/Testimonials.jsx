@@ -93,7 +93,7 @@ export default Testimonials;
 
 const TestiMony = ({ name, designation, testimony, image }) => {
   return (
-    <div className="w-full">
+    <div className="w-full testimony-card flex items-center">
       <div className="flex mx-auto flex-col items-center w-10/12 lg:flex-row lg:gap-6">
         <div className="flex justify-center w-full sm:w-10/12 md:w-9/12 lg:w-4/12">
           <div className="w-10/12">
@@ -116,7 +116,7 @@ const TestiMony = ({ name, designation, testimony, image }) => {
             />
           </div>
         </div>
-        <div className="flex lg:flex-1 mt-20 lg:mt-0 justify-center flex-col relative lg:border-l-4 lg:border-l-gray-300 lg:pl-8">
+        <div className="flex lg:flex-1 mt-20 lg:mt-0 justify-center flex-col relative lg:border-l-4 lg:border-l-gray-300 lg:pl-8 testimony-textbox">
           <h3 className="text-bkBlack text-left text-xl lg:text-2xl font-semibold">
             {name}
           </h3>

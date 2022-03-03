@@ -72,7 +72,7 @@ const GetVerified = () => {
   };
 
   return (
-    <div className="px-8 lg:px-20 mt-36 mb-32">
+    <div className="get-verified px-8 lg:px-20 mt-36 mb-32">
       <div className="get-verified-box py-10 lg:py-16 xl:py-20 flex flex-col lg:flex-row lg:justify-between">
         <div className="gvb-left px-10 lg:px-20 xl:relative xl:bottom-4 text-white">
           <h2 className="text-4xl leading-tight font-medium">

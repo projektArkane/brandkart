@@ -42,7 +42,7 @@ const initialValues = {
   name: "",
   email: "",
   location: "",
-  dateOfBirth: "",
+  age: "",
   gender: "",
   influencerCategory: "",
   subCategory: [],
@@ -160,7 +160,7 @@ const JoinNow = () => {
         ? ""
         : "Invalid Email";
     temp.location = values.location ? "" : "Required";
-    temp.dateOfBirth = values.dateOfBirth ? "" : "Required";
+    temp.age = values.age < 100 ? "" : "Age must be between 1-100";
     temp.gender = values.gender.length != 0 ? "" : "Required";
     temp.influencerCategory =
       values.influencerCategory.length != 0 ? "" : "Required";
@@ -195,7 +195,10 @@ const JoinNow = () => {
   console.log("All of the values: ", values);
 
   return (
-    <div className="bg-white flex flex-col justify-between">
+    <div
+      style={{ backgroundColor: "#eeeeee" }}
+      className="flex flex-col justify-between"
+    >
       <Navbar />
       <div className="px-8 md:px-20 lg:w-9/12">
         <h4 className="mt-6 text-xl md:text-2xl text-bkBlack2 font-medium">
@@ -204,7 +207,7 @@ const JoinNow = () => {
         <p className="mt-2 text-sm md:text-base font-normal text-bkBlack2 mb-5">
           Let Brandkart handle your branding needs
         </p>
-        <div className="text-bkBlack2 bg-white">
+        <div className="text-bkBlack2">
           <form autoComplete="off" onSubmit={handleSubmit}>
             <Grid container spacing={4}>
               <Grid item xs={12} sm={12}>
@@ -257,7 +260,7 @@ const JoinNow = () => {
               </Grid>
 
               <Grid item xs={12} sm={6}>
-                <h4 className="my-3">Date of birth</h4>
+                <h4 className="my-3">Age</h4>
                 {/* <DatePicker
                   name="dateOfBirth"
                   label="Date of birth"
@@ -268,15 +271,16 @@ const JoinNow = () => {
                   renderInput={(params) => <TextField {...params} />}
                 /> */}
                 <TextField
-                  name="dateOfBirth"
+                  name="age"
                   className="w-full"
+                  type={"number"}
                   variant="outlined"
-                  label="dd/mm/yy"
-                  value={values.dateOfBirth}
+                  label="Enter your age"
+                  value={values.age}
                   onChange={handleInputChange}
-                  {...(allErrors.dateOfBirth && {
+                  {...(allErrors.age && {
                     error: true,
-                    helperText: allErrors.dateOfBirth,
+                    helperText: allErrors.age,
                   })}
                 />
               </Grid>
@@ -293,11 +297,12 @@ const JoinNow = () => {
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={gender}
-                    label="Age"
+                    label="Gender"
                     onChange={handleGenderChange}
                   >
                     <MenuItem value={"Male"}>Male</MenuItem>
                     <MenuItem value={"Female"}>Female</MenuItem>
+                    <MenuItem value={"Other"}>Other</MenuItem>
                   </Select>
                   {allErrors.gender && (
                     <FormHelperText>{allErrors.gender}</FormHelperText>
@@ -460,7 +465,7 @@ const JoinNow = () => {
 
             <br />
             <button
-              className="mt-8 bg-purple text-white px-4 text-base py-2 font-medium rounded-md"
+              className="mt-8 mb-10 bg-purple text-white px-4 text-base py-2 font-medium rounded-md"
               type="submit"
             >
               Submit
