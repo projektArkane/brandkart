@@ -150,7 +150,7 @@ const Services = () => {
               </div>
               <div className="pl-5">
                 <p className="text-xl md:text-2xl">Define Campaign</p>
-                <p className="text-renownBlack font-normal">Features</p>
+                {/* <p className="text-renownBlack font-normal">Features</p> */}
               </div>
             </div>
           </AccordionSummary>
@@ -173,7 +173,7 @@ const Services = () => {
               </div>
               <div className="pl-5">
                 <p className="text-xl md:text-2xl">Shortlist Influencers</p>
-                <p className="text-renownBlack font-normal">Features</p>
+                {/* <p className="text-renownBlack font-normal">Features</p> */}
               </div>
             </div>
           </AccordionSummary>
@@ -196,7 +196,7 @@ const Services = () => {
               </div>
               <div className="pl-5">
                 <p className="text-xl md:text-2xl">Execute Campaign</p>
-                <p className="text-renownBlack font-normal">Features</p>
+                {/* <p className="text-renownBlack font-normal">Features</p> */}
               </div>
             </div>
           </AccordionSummary>

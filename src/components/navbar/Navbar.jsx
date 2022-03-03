@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav
       id="navbar-container"
-      className="px-8 md:px-20 flex items-center pt-10 pb-5"
+      className="px-8 md:px-20 flex items-center pt-10 pb-5 z-50"
     >
       <div className="md:hidden mr-2">
         <BiMenu className="text-3xl" color="black" onClick={() => null} />

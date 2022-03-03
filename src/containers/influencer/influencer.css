@@ -1,5 +1,5 @@
-.influencer {
-  padding: 3rem 5.5rem 6rem 5.5rem;
+.influencers {
+  /* background-color: white; */
   /* background-color: orange; */
 }
 
@@ -7,6 +7,26 @@
   /* background-color: red; */
   display: flex;
   justify-content: center;
+}
+
+.gradient-cyan-container {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  opacity: 0.5;
+  transform: scale(1);
+  right: 0;
+  bottom: -100px;
+  filter: blur(80px);
+}
+
+.gradient-cyan {
+  background: rgb(79, 217, 167);
+  background: radial-gradient(
+    circle,
+    rgba(79, 217, 167, 0.4023984593837535) 36%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .influencer .line-1 h3 {

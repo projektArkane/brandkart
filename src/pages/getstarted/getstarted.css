@@ -1,12 +1,5 @@
 .getstarted {
-  /* background: rgb(241, 167, 117);
-  background: linear-gradient(
-    55deg,
-    rgba(241, 167, 117, 0.4976584383753502) 0%,
-    rgba(255, 255, 255, 0.3295912114845938) 35%,
-    rgba(110, 83, 203, 0.20354079131652658) 83%,
-    rgba(233, 145, 130, 0.13351278011204482) 91%
-  ); */
+  background-color: white;
 }
 
 .getstarted .left {

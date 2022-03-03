@@ -35,7 +35,8 @@ const Influencer = () => {
   };
 
   return (
-    <div className="influencer-bg px-0 mt-28">
+    <div className="influencers px-0 mt-28 relative">
+      {/* <div className="gradient-cyan-container gradient-cyan"></div> */}
       <div className="flex justify-center">
         <h3 className="text-purple text-lg md:text-xl font-medium uppercase">
           Influencers

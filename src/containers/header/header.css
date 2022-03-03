@@ -11,6 +11,68 @@
 }
 
 #header-container {
-  /* background-image: url(../../assets/images/gradient-1.png);
-  background-size: cover; */
+  /* background-color: white; */
+}
+
+.gradient-green-container {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  opacity: 0.35;
+  transform: scale(1.5);
+  filter: blur(80px);
+  top: 450px;
+  left: -10px;
+  border: 2px solid black;
+  z-index: 1;
+}
+
+.gradient-green {
+  background: rgb(207, 232, 108);
+  background: radial-gradient(
+    circle,
+    rgba(207, 232, 108, 1) 0%,
+    rgba(255, 255, 255, 0) 69%
+  );
+  /* filter: blur(80px); */
+}
+
+.gradient-red-container {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  opacity: 0.5;
+  right: 0;
+  top: 400px;
+  filter: blur(70px);
+  z-index: 2;
+}
+
+.gradient-red {
+  background: rgb(233, 145, 130);
+  background: radial-gradient(
+    circle,
+    rgba(233, 145, 130, 0.39959733893557425) 38%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.gradient-purple-container {
+  position: absolute;
+  width: 500px;
+  right: 100px;
+  transform: scale(1.5);
+  height: 500px;
+  opacity: 0.5;
+  filter: blur(70px);
+  z-index: 1;
+}
+
+.gradient-purple {
+  background: rgb(110, 83, 203);
+  background: radial-gradient(
+    circle,
+    rgba(110, 83, 203, 0.46122198879551823) 39%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }

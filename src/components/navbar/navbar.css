@@ -1,5 +1,4 @@
 #navbar-container {
-  /* background-image: url(../../assets/images/gradient-1.png);
-  background-position: center;
-  background-size: cover; */
+  background-color: transparent;
+  z-index: 9999;
 }

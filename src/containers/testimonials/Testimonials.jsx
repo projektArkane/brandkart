@@ -14,7 +14,7 @@ import "swiper/css/navigation";
 
 const Testimonials = () => {
   return (
-    <div id="testimonials-section" className="px-8 md:px-20 mt-40">
+    <div className="testimonials px-8 md:px-20 mt-40">
       <div className="flex justify-center">
         <h3 className="text-purple text-lg md:text-xl font-medium uppercase">
           Testimonials
@@ -93,7 +93,7 @@ export default Testimonials;
 
 const TestiMony = ({ name, designation, testimony, image }) => {
   return (
-    <div style={{ backgroundColor: "#EEEEEE" }} className="w-full">
+    <div className="w-full">
       <div className="flex mx-auto flex-col items-center w-10/12 lg:flex-row lg:gap-6">
         <div className="flex justify-center w-full sm:w-10/12 md:w-9/12 lg:w-4/12">
           <div className="w-10/12">

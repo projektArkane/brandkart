@@ -13,7 +13,10 @@ const Header = () => {
       id="header-container"
       className="flex flex-col lg:flex-row px-8 lg:px-20"
     >
-      <div className="flex-1">
+      {/* <div className="gradient-green-container gradient-green"></div> */}
+      {/* <div className="gradient-red-container gradient-red"></div> */}
+      {/* <div className="gradient-purple-container gradient-purple"></div> */}
+      <div className="flex-1 z-10">
         <h1 className="mt-20 text-bkBlack2 text-center leading-snug lg:leading-hero-title lg:text-left lg:pr-32 text-4xl md:text-5xl lg:text-headerTitle font-bold">
           Brand Requirements Simplified
         </h1>
@@ -38,7 +41,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
-      <div className="mt-20 lg:mt-16 flex-1 flex justify-center">
+      <div className="mt-20 lg:mt-16 flex-1 flex justify-center z-10">
         <img
           className="object-contain"
           src={images.hero_image}

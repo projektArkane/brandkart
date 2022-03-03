@@ -19,9 +19,12 @@ const GetStarted = () => {
   };
 
   return (
-    <div className="flex getstarted flex-col h-screen">
+    <div className="bg-white flex getstarted flex-col">
+      {/* <div className="gradient-green-container gradient-green"></div> */}
+      {/* <div className="gradient-red-container gradient-red"></div> */}
+      {/* <div className="gradient-purple-container gradient-purple"></div> */}
       <Navbar />
-      <div className="sm:flex flex-1 sm:px-20 px-8 sm:mt-20">
+      <div className="sm:flex flex-1 sm:px-20 px-8 sm:mt-20 z-50">
         <div className="pr-10 mt-10 sm:mt-0">
           <GsContent
             heading={"Are you a Brand?"}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { Navbar } from "../../../components";
 import Footer from "../../../containers/footer/Footer";
@@ -160,6 +160,7 @@ const JoinNow = () => {
         ? ""
         : "Invalid Email";
     temp.location = values.location ? "" : "Required";
+    temp.dateOfBirth = values.dateOfBirth ? "" : "Required";
     temp.gender = values.gender.length != 0 ? "" : "Required";
     temp.influencerCategory =
       values.influencerCategory.length != 0 ? "" : "Required";
@@ -185,7 +186,8 @@ const JoinNow = () => {
         },
       })
         .then((response) => response.json())
-        .then((response) => console.log("Success:", JSON.stringify(response)))
+        // .then((response) => console.log("Success:", JSON.stringify(response)))
+        .then((response) => window.alert(response))
         .catch((error) => console.error("Error:", error));
     }
   };
@@ -193,7 +195,7 @@ const JoinNow = () => {
   console.log("All of the values: ", values);
 
   return (
-    <div className="flex flex-col justify-between h-screen">
+    <div className="bg-white flex flex-col justify-between">
       <Navbar />
       <div className="px-8 md:px-20 lg:w-9/12">
         <h4 className="mt-6 text-xl md:text-2xl text-bkBlack2 font-medium">
@@ -202,7 +204,7 @@ const JoinNow = () => {
         <p className="mt-2 text-sm md:text-base font-normal text-bkBlack2 mb-5">
           Let Brandkart handle your branding needs
         </p>
-        <div className="text-bkBlack2">
+        <div className="text-bkBlack2 bg-white">
           <form autoComplete="off" onSubmit={handleSubmit}>
             <Grid container spacing={4}>
               <Grid item xs={12} sm={12}>
@@ -256,7 +258,7 @@ const JoinNow = () => {
 
               <Grid item xs={12} sm={6}>
                 <h4 className="my-3">Date of birth</h4>
-                <DatePicker
+                {/* <DatePicker
                   name="dateOfBirth"
                   label="Date of birth"
                   value={dob}
@@ -264,6 +266,18 @@ const JoinNow = () => {
                     setDob(newValue);
                   }}
                   renderInput={(params) => <TextField {...params} />}
+                /> */}
+                <TextField
+                  name="dateOfBirth"
+                  className="w-full"
+                  variant="outlined"
+                  label="dd/mm/yy"
+                  value={values.dateOfBirth}
+                  onChange={handleInputChange}
+                  {...(allErrors.dateOfBirth && {
+                    error: true,
+                    helperText: allErrors.dateOfBirth,
+                  })}
                 />
               </Grid>
 
